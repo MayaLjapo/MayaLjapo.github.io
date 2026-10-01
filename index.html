@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maya Ljapo | Finance Portfolio</title>
+
+    <style>
+        /* =========================
+           GENERAL STYLES
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f8fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .section-description {
+            color: #6b7280;
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            width: 90%;
+            margin: auto;
+            height: 70px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           PERSONAL STATEMENT / HERO
+        ========================== */
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ffffff,
+                    #f5f3ff
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .intro-label {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .personal-statement {
+            font-size: 1.45rem;
+            color: #4b5563;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        #skills {
+            background-color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            background-color: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #374151;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 14px;
+            padding: 30px;
+            border: 1px solid #e5e7eb;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-number {
+            color: #2563eb;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .project-subtitle {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        .project-card p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .project-highlights {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            color: #4b5563;
+        }
+
+        .project-highlights li {
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .tag {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            padding: 6px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background-color: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .personal-statement {
+                font-size: 1.15rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                justify-content: center;
+                gap: 7px;
+                height: 90px;
+            }
+
+            .nav-links {
+                gap: 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                Maya Ljapo
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         PERSONAL STATEMENT
+    ========================== -->
+
+    <section class="hero" id="about">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="intro-label">
+                    Finance Student • Rutgers Business School
+                </div>
+
+                <h1>
+                    Hi, I'm <span>Maya.</span>
+                </h1>
+
+                <p class="personal-statement">
+                    I'm a junior at Rutgers Business School studying Finance
+                    who brings together analytical thinking, relationship-building,
+                    and leadership experience to solve business challenges and
+                    create meaningful results.
+                </p>
+
+                <a href="#projects" class="hero-button">
+                    View My Projects
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2>Skills</h2>
+
+            <p class="section-description">
+                A combination of analytical, business, communication, and
+                leadership skills developed through professional experience,
+                student organizations, and project work.
+            </p>
+
+            <div class="skills-grid">
+
+                <div class="skill">Financial Analysis</div>
+                <div class="skill">Business Strategy</div>
+                <div class="skill">Scenario Analysis</div>
+                <div class="skill">B2B Sales</div>
+
+                <div class="skill">Negotiation</div>
+                <div class="skill">Presentation Skills</div>
+                <div class="skill">Relationship Building</div>
+                <div class="skill">Project Management</div>
+
+                <div class="skill">Leadership</div>
+                <div class="skill">Event Planning</div>
+                <div class="skill">Communication</div>
+                <div class="skill">Teamwork</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2>Featured Projects & Experience</h2>
+
+            <p class="section-description">
+                Selected experiences that demonstrate my ability to analyze
+                business problems, generate measurable results, lead others,
+                and communicate effectively.
+            </p>
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 1 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+                    <h3>
+                        2026 J&J University Case Competition
+                    </h3>
+
+                    <div class="project-subtitle">
+                        Finance & Business Strategy
+                    </div>
+
+                    <p>
+                        Collaborated with a team to develop a growth strategy
+                        for the barbed sutures market while balancing financial,
+                        operational, and strategic business decisions.
+                    </p>
+
+                    <ul class="project-highlights">
+
+                        <li>
+                            Developed recommendations involving R&D,
+                            intellectual property, pricing, and marketing.
+                        </li>
+
+                        <li>
+                            Used financial models and scenario analysis to
+                            evaluate costs, risks, and potential returns.
+                        </li>
+
+                        <li>
+                            Considered manufacturing, pricing, and talent
+                            planning to understand how cross-functional
+                            decisions affected overall results.
+                        </li>
+
+                    </ul>
+
+                    <div class="tags">
+                        <span class="tag">Financial Analysis</span>
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Teamwork</span>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+                    <h3>
+                        NMG Sales Representative
+                    </h3>
+
+                    <div class="project-subtitle">
+                        B2B Sales Internship
+                    </div>
+
+                    <p>
+                        Worked directly with business customers throughout
+                        Manhattan, Queens, and Staten Island to sell T-Mobile
+                        lines and internet services.
+                    </p>
+
+                    <ul class="project-highlights">
+
+                        <li>
+                            Generated more than $2,000 in profit through
+                            business-to-business sales.
+                        </li>
+
+                        <li>
+                            Acquired 15+ B2B customers in 10 weeks through
+                            in-person outreach and presentations.
+                        </li>
+
+                        <li>
+                            Managed the sales process from initial outreach
+                            through closing while communicating with business
+                            decision-makers.
+                        </li>
+
+                    </ul>
+
+                    <div class="tags">
+                        <span class="tag">B2B Sales</span>
+                        <span class="tag">Negotiation</span>
+                        <span class="tag">Relationship Building</span>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+                    <h3>
+                        Resident Assistant
+                    </h3>
+
+                    <div class="project-subtitle">
+                        Rutgers Office of Residence Life
+                    </div>
+
+                    <p>
+                        Help create an inclusive and engaging residential
+                        community through student support, programming,
+                        conflict resolution, and digital outreach.
+                    </p>
+
+                    <ul class="project-highlights">
+
+                        <li>
+                            Plan and facilitate community programs that
+                            encourage student connection and belonging.
+                        </li>
+
+                        <li>
+                            Support residents, respond to concerns, and help
+                            mediate conflicts while maintaining a respectful
+                            community.
+                        </li>
+
+                        <li>
+                            Collaborate with my team to create Instagram
+                            content, film videos, and promote upcoming
+                            community events.
+                        </li>
+
+                    </ul>
+
+                    <div class="tags">
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Event Planning</span>
+                        <span class="tag">Social Media</span>
+                        <span class="tag">Communication</span>
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>Maya Ljapo</h3>
+
+        <p>
+            Finance Student • Rutgers Business School
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
