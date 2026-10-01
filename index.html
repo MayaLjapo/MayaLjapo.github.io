@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,22 @@
     <title>Maya Ljapo | Finance Portfolio</title>
 
     <style>
-        /* =========================
-           GENERAL STYLES
-        ========================== */
+
+        /* ========================================
+           COLOR THEME
+
+           Main Pink:       #DB2777
+           Dark Pink:       #BE185D
+           Light Pink:      #FCE7F3
+           Very Light Pink: #FDF2F8
+           White:           #FFFFFF
+           Dark Text:       #111827
+        ======================================== */
+
+
+        /* ========================================
+           GENERAL
+        ======================================== */
 
         * {
             margin: 0;
@@ -23,8 +37,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f7f8fa;
-            color: #1f2937;
+            background-color: #FDF2F8;
+            color: #1F2937;
             line-height: 1.6;
         }
 
@@ -38,7 +52,9 @@
             padding: 80px 0;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             line-height: 1.2;
         }
 
@@ -49,29 +65,32 @@
         }
 
         .section-description {
-            color: #6b7280;
+            color: #6B7280;
             max-width: 650px;
             margin-bottom: 40px;
         }
 
 
-        /* =========================
+        /* ========================================
            NAVIGATION
-        ========================== */
+        ======================================== */
 
         nav {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #FCE7F3;
+
             position: sticky;
             top: 0;
             z-index: 1000;
+
+            box-shadow: 0 2px 10px rgba(219, 39, 119, 0.05);
         }
 
         .nav-container {
-            max-width: 1100px;
             width: 90%;
-            margin: auto;
+            max-width: 1100px;
             height: 70px;
+            margin: auto;
 
             display: flex;
             justify-content: space-between;
@@ -81,7 +100,7 @@
         .logo {
             font-size: 1.3rem;
             font-weight: bold;
-            color: #111827;
+            color: #DB2777;
         }
 
         .nav-links {
@@ -92,129 +111,210 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #4b5563;
+            color: #4B5563;
             font-weight: 500;
             transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: #2563eb;
+            color: #DB2777;
         }
 
 
-        /* =========================
-           PERSONAL STATEMENT / HERO
-        ========================== */
+        /* ========================================
+           HERO / PERSONAL STATEMENT
+        ======================================== */
 
         .hero {
             min-height: 80vh;
+
             display: flex;
             align-items: center;
 
             background:
                 linear-gradient(
                     135deg,
-                    #eff6ff,
-                    #ffffff,
-                    #f5f3ff
+                    #FCE7F3,
+                    #FFFFFF,
+                    #FDF2F8
                 );
         }
 
+        /*
+           This creates two columns:
+           your introduction on the left
+           and your headshot on the right.
+        */
+
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
         .hero-content {
-            max-width: 850px;
+            flex: 1;
+            max-width: 700px;
         }
 
         .intro-label {
             display: inline-block;
-            background-color: #dbeafe;
-            color: #1d4ed8;
+
+            background-color: #FCE7F3;
+            color: #BE185D;
+
             padding: 7px 14px;
             border-radius: 50px;
+
             font-weight: bold;
+
             margin-bottom: 20px;
         }
 
         .hero h1 {
             font-size: 4rem;
             color: #111827;
-            margin-bottom: 15px;
+
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
-            color: #2563eb;
+            color: #DB2777;
         }
 
         .personal-statement {
-            font-size: 1.45rem;
-            color: #4b5563;
-            max-width: 800px;
+            font-size: 1.35rem;
+            color: #4B5563;
+
+            max-width: 750px;
+
             margin-bottom: 30px;
         }
 
         .hero-button {
             display: inline-block;
-            background-color: #2563eb;
-            color: white;
+
+            background-color: #DB2777;
+            color: #FFFFFF;
+
             padding: 13px 24px;
+
             border-radius: 8px;
+
             text-decoration: none;
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .hero-button:hover {
-            background-color: #1d4ed8;
+            background-color: #BE185D;
+
             transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(219, 39, 119, 0.20);
         }
 
 
-        /* =========================
+        /* ========================================
+           HEADSHOT
+        ======================================== */
+
+        .headshot-container {
+            flex-shrink: 0;
+        }
+
+        .headshot {
+            width: 300px;
+            height: 300px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 7px solid #FFFFFF;
+
+            box-shadow:
+                0 15px 35px
+                rgba(219, 39, 119, 0.20);
+        }
+
+
+        /* ========================================
            SKILLS
-        ========================== */
+        ======================================== */
 
         #skills {
-            background-color: white;
+            background-color: #FFFFFF;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 15px;
         }
 
         .skill {
-            background-color: #f8fafc;
-            border: 1px solid #e5e7eb;
+            background-color: #FDF2F8;
+
+            border: 1px solid #FCE7F3;
+
             padding: 20px;
+
             text-align: center;
+
             border-radius: 10px;
+
             font-weight: bold;
-            color: #374151;
+            color: #4B5563;
+
             transition: 0.3s;
         }
 
         .skill:hover {
-            border-color: #2563eb;
+            border-color: #DB2777;
+
+            color: #BE185D;
+
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+
+            box-shadow:
+                0 8px 20px
+                rgba(219, 39, 119, 0.10);
         }
 
 
-        /* =========================
+        /* ========================================
            PROJECTS
-        ========================== */
+        ======================================== */
+
+        #projects {
+            background-color: #FDF2F8;
+        }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 25px;
         }
 
         .project-card {
-            background-color: white;
+            background-color: #FFFFFF;
+
             border-radius: 14px;
-            padding: 30px;
-            border: 1px solid #e5e7eb;
+
+            padding: 25px;
+
+            border: 1px solid #FCE7F3;
 
             display: flex;
             flex-direction: column;
@@ -224,74 +324,159 @@
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+            border-color: #F9A8D4;
+
+            box-shadow:
+                0 15px 35px
+                rgba(219, 39, 119, 0.12);
         }
 
         .project-number {
-            color: #2563eb;
+            color: #DB2777;
+
             font-size: 0.9rem;
             font-weight: bold;
+
             margin-bottom: 15px;
         }
 
         .project-card h3 {
             font-size: 1.35rem;
+
             margin-bottom: 8px;
+
             color: #111827;
         }
 
         .project-subtitle {
-            color: #2563eb;
+            color: #BE185D;
+
             font-weight: bold;
+
             font-size: 0.9rem;
+
             margin-bottom: 18px;
         }
 
+
+        /* ========================================
+           PROJECT IMAGES
+        ======================================== */
+
+        .project-image {
+            width: 100%;
+            height: 210px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            margin-bottom: 20px;
+
+            border: 1px solid #FCE7F3;
+        }
+
         .project-card p {
-            color: #6b7280;
+            color: #6B7280;
+
             margin-bottom: 20px;
         }
 
         .project-highlights {
             padding-left: 20px;
+
             margin-bottom: 25px;
-            color: #4b5563;
+
+            color: #4B5563;
         }
 
         .project-highlights li {
             margin-bottom: 10px;
         }
 
+        .project-highlights li::marker {
+            color: #DB2777;
+        }
+
+
+        /* ========================================
+           PROJECT SKILL TAGS
+        ======================================== */
+
         .tags {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
-            margin-top: auto;
+
+            margin-bottom: 20px;
         }
 
         .tag {
-            background-color: #eff6ff;
-            color: #1d4ed8;
+            background-color: #FCE7F3;
+
+            color: #BE185D;
+
             padding: 6px 10px;
+
             border-radius: 50px;
+
             font-size: 0.8rem;
+
             font-weight: bold;
         }
 
 
-        /* =========================
+        /* ========================================
+           PROJECT LINKS / BUTTONS
+        ======================================== */
+
+        .project-link {
+            display: inline-block;
+
+            background-color: #DB2777;
+            color: #FFFFFF;
+
+            text-decoration: none;
+            text-align: center;
+
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            margin-top: auto;
+
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background-color: #BE185D;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ========================================
            FOOTER
-        ========================== */
+        ======================================== */
 
         footer {
-            background-color: #111827;
-            color: #d1d5db;
+            background-color: #BE185D;
+
+            color: #FCE7F3;
+
             text-align: center;
-            padding: 35px 20px;
+
+            padding: 40px 20px;
         }
 
         footer h3 {
-            color: white;
+            color: #FFFFFF;
+
             margin-bottom: 8px;
         }
 
@@ -300,25 +485,43 @@
         }
 
 
-        /* =========================
-           RESPONSIVE DESIGN
-        ========================== */
+        /* ========================================
+           TABLET
+        ======================================== */
 
         @media (max-width: 900px) {
+
+            .hero-layout {
+                flex-direction: column-reverse;
+                text-align: center;
+
+                gap: 35px;
+            }
+
+            .headshot {
+                width: 240px;
+                height: 240px;
+            }
 
             .projects-grid {
                 grid-template-columns: 1fr;
             }
 
             .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .hero h1 {
                 font-size: 3rem;
             }
+
         }
 
+
+        /* ========================================
+           MOBILE
+        ======================================== */
 
         @media (max-width: 600px) {
 
@@ -338,21 +541,31 @@
                 font-size: 1.15rem;
             }
 
+            .headshot {
+                width: 200px;
+                height: 200px;
+            }
+
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
             .nav-container {
                 flex-direction: column;
+
                 justify-content: center;
+
                 gap: 7px;
+
                 height: 90px;
             }
 
             .nav-links {
                 gap: 18px;
+
                 font-size: 0.9rem;
             }
+
         }
 
     </style>
@@ -361,11 +574,13 @@
 
 <body>
 
-    <!-- =========================
+
+    <!-- ========================================
          NAVIGATION
-    ========================== -->
+    ========================================= -->
 
     <nav>
+
         <div class="nav-container">
 
             <div class="logo">
@@ -373,43 +588,102 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
+
             </ul>
 
         </div>
+
     </nav>
 
 
-    <!-- =========================
-         PERSONAL STATEMENT
-    ========================== -->
 
-    <section class="hero" id="about">
+    <!-- ========================================
+         ABOUT / PERSONAL STATEMENT
+    ========================================= -->
+
+    <section
+        class="hero"
+        id="about"
+    >
 
         <div class="container">
 
-            <div class="hero-content">
+            <div class="hero-layout">
 
-                <div class="intro-label">
-                    Finance Student • Rutgers Business School
+
+                <!-- PERSONAL STATEMENT -->
+
+                <div class="hero-content">
+
+                    <div class="intro-label">
+                        Finance Student • Rutgers Business School
+                    </div>
+
+
+                    <h1>
+                        Hi, I'm
+                        <span>Maya.</span>
+                    </h1>
+
+
+                    <p class="personal-statement">
+
+                        I'm a junior at Rutgers Business School
+                        studying Finance who enjoys working with
+                        people, taking on new challenges, and using
+                        my experiences in sales, leadership, and
+                        business to continue learning and growing.
+
+                    </p>
+
+
+                    <a
+                        href="#projects"
+                        class="hero-button"
+                    >
+                        View My Projects
+                    </a>
+
                 </div>
 
-                <h1>
-                    Hi, I'm <span>Maya.</span>
-                </h1>
 
-                <p class="personal-statement">
-                    I'm a junior at Rutgers Business School studying Finance
-                    who brings together analytical thinking, relationship-building,
-                    and leadership experience to solve business challenges and
-                    create meaningful results.
-                </p>
+                <!-- =================================
+                     YOUR HEADSHOT
 
-                <a href="#projects" class="hero-button">
-                    View My Projects
-                </a>
+                     Put your headshot inside the
+                     images folder and name it:
+
+                     maya-headshot.jpg
+                ================================== -->
+
+                <div class="headshot-container">
+
+                    <img
+                        src="images/maya-headshot.jpg"
+                        alt="Professional headshot of Maya Ljapo"
+                        class="headshot"
+                    >
+
+                </div>
+
 
             </div>
 
@@ -418,38 +692,78 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ========================================
          SKILLS
-    ========================== -->
+    ========================================= -->
 
     <section id="skills">
 
         <div class="container">
 
-            <h2>Skills</h2>
+            <h2>
+                Skills
+            </h2>
+
 
             <p class="section-description">
-                A combination of analytical, business, communication, and
-                leadership skills developed through professional experience,
-                student organizations, and project work.
+
+                Skills I've developed through my professional
+                experiences, leadership roles, student
+                organizations, and project work.
+
             </p>
+
 
             <div class="skills-grid">
 
-                <div class="skill">Financial Analysis</div>
-                <div class="skill">Business Strategy</div>
-                <div class="skill">Scenario Analysis</div>
-                <div class="skill">B2B Sales</div>
+                <div class="skill">
+                    Financial Analysis
+                </div>
 
-                <div class="skill">Negotiation</div>
-                <div class="skill">Presentation Skills</div>
-                <div class="skill">Relationship Building</div>
-                <div class="skill">Project Management</div>
+                <div class="skill">
+                    Business Strategy
+                </div>
 
-                <div class="skill">Leadership</div>
-                <div class="skill">Event Planning</div>
-                <div class="skill">Communication</div>
-                <div class="skill">Teamwork</div>
+                <div class="skill">
+                    Scenario Analysis
+                </div>
+
+                <div class="skill">
+                    B2B Sales
+                </div>
+
+                <div class="skill">
+                    Negotiation
+                </div>
+
+                <div class="skill">
+                    Presentation Skills
+                </div>
+
+                <div class="skill">
+                    Relationship Building
+                </div>
+
+                <div class="skill">
+                    Project Management
+                </div>
+
+                <div class="skill">
+                    Leadership
+                </div>
+
+                <div class="skill">
+                    Event Planning
+                </div>
+
+                <div class="skill">
+                    Communication
+                </div>
+
+                <div class="skill">
+                    Teamwork
+                </div>
 
             </div>
 
@@ -458,177 +772,384 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ========================================
          PROJECTS
-    ========================== -->
+    ========================================= -->
 
     <section id="projects">
 
         <div class="container">
 
-            <h2>Featured Projects & Experience</h2>
+            <h2>
+                Featured Projects &amp; Experience
+            </h2>
+
 
             <p class="section-description">
-                Selected experiences that demonstrate my ability to analyze
-                business problems, generate measurable results, lead others,
-                and communicate effectively.
+
+                A few experiences that have helped me develop
+                my skills in finance, business, sales,
+                communication, and leadership.
+
             </p>
 
 
             <div class="projects-grid">
 
 
-                <!-- PROJECT 1 -->
+
+                <!-- =================================
+                     PROJECT 1
+                     J&J CASE COMPETITION
+                ================================== -->
 
                 <article class="project-card">
+
 
                     <div class="project-number">
                         PROJECT 01
                     </div>
 
+
                     <h3>
-                        2026 J&J University Case Competition
+                        2026 J&amp;J University
+                        Case Competition
                     </h3>
 
+
                     <div class="project-subtitle">
-                        Finance & Business Strategy
+                        Finance &amp; Business Strategy
                     </div>
 
+
+                    <!--
+                        J&J IMAGE
+
+                        Put the image in your images
+                        folder and name it:
+
+                        jj-case-competition.jpg
+                    -->
+
+                    <img
+                        src="images/jj-case-competition.jpg"
+                        alt="2026 J&J University Case Competition"
+                        class="project-image"
+                    >
+
+
                     <p>
-                        Collaborated with a team to develop a growth strategy
-                        for the barbed sutures market while balancing financial,
-                        operational, and strategic business decisions.
+
+                        Worked with a team to develop a growth
+                        strategy for the barbed sutures market
+                        while balancing financial, operational,
+                        and strategic business decisions.
+
                     </p>
+
 
                     <ul class="project-highlights">
 
                         <li>
-                            Developed recommendations involving R&D,
-                            intellectual property, pricing, and marketing.
+
+                            Developed recommendations involving
+                            R&amp;D, intellectual property,
+                            pricing, and marketing.
+
                         </li>
 
                         <li>
-                            Used financial models and scenario analysis to
-                            evaluate costs, risks, and potential returns.
+
+                            Used financial models and scenario
+                            analysis to evaluate costs, risks,
+                            and potential returns.
+
                         </li>
 
                         <li>
-                            Considered manufacturing, pricing, and talent
-                            planning to understand how cross-functional
-                            decisions affected overall results.
+
+                            Considered manufacturing, pricing,
+                            and talent planning to understand
+                            how different business decisions
+                            could impact our overall results.
+
                         </li>
 
                     </ul>
 
+
                     <div class="tags">
-                        <span class="tag">Financial Analysis</span>
-                        <span class="tag">Strategy</span>
-                        <span class="tag">Teamwork</span>
+
+                        <span class="tag">
+                            Financial Analysis
+                        </span>
+
+                        <span class="tag">
+                            Strategy
+                        </span>
+
+                        <span class="tag">
+                            Teamwork
+                        </span>
+
                     </div>
+
+
+                    <!--
+                        J&J LINK
+
+                        Replace YOUR_JJ_LINK_HERE
+                        with your actual link.
+                    -->
+
+                    <a
+                        href="YOUR_JJ_LINK_HERE"
+                        class="project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Project
+                    </a>
+
 
                 </article>
 
 
-                <!-- PROJECT 2 -->
+
+                <!-- =================================
+                     PROJECT 2
+                     NMG SALES
+                ================================== -->
 
                 <article class="project-card">
+
 
                     <div class="project-number">
                         PROJECT 02
                     </div>
 
+
                     <h3>
                         NMG Sales Representative
                     </h3>
+
 
                     <div class="project-subtitle">
                         B2B Sales Internship
                     </div>
 
+
+                    <!--
+                        NMG IMAGE
+
+                        Put the image in your images
+                        folder and name it:
+
+                        nmg-sales.jpg
+                    -->
+
+                    <img
+                        src="images/nmg-sales.jpg"
+                        alt="NMG Sales Representative experience"
+                        class="project-image"
+                    >
+
+
                     <p>
-                        Worked directly with business customers throughout
-                        Manhattan, Queens, and Staten Island to sell T-Mobile
-                        lines and internet services.
+
+                        Worked directly with business customers
+                        throughout Manhattan, Queens, and
+                        Staten Island to sell T-Mobile lines
+                        and internet services.
+
                     </p>
+
 
                     <ul class="project-highlights">
 
                         <li>
-                            Generated more than $2,000 in profit through
-                            business-to-business sales.
+
+                            Generated more than $2,000 in profit
+                            through business-to-business sales.
+
                         </li>
 
                         <li>
-                            Acquired 15+ B2B customers in 10 weeks through
-                            in-person outreach and presentations.
+
+                            Acquired 15+ B2B customers in
+                            10 weeks through in-person outreach,
+                            presentations, and conversations.
+
                         </li>
 
                         <li>
-                            Managed the sales process from initial outreach
-                            through closing while communicating with business
-                            decision-makers.
+
+                            Managed the sales process from
+                            initial outreach through closing
+                            while building relationships with
+                            business decision-makers.
+
                         </li>
 
                     </ul>
 
+
                     <div class="tags">
-                        <span class="tag">B2B Sales</span>
-                        <span class="tag">Negotiation</span>
-                        <span class="tag">Relationship Building</span>
+
+                        <span class="tag">
+                            B2B Sales
+                        </span>
+
+                        <span class="tag">
+                            Negotiation
+                        </span>
+
+                        <span class="tag">
+                            Relationship Building
+                        </span>
+
                     </div>
+
+
+                    <!--
+                        NMG LINK
+
+                        Replace YOUR_NMG_LINK_HERE
+                        with your actual link.
+                    -->
+
+                    <a
+                        href="YOUR_NMG_LINK_HERE"
+                        class="project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Experience
+                    </a>
+
 
                 </article>
 
 
-                <!-- PROJECT 3 -->
+
+                <!-- =================================
+                     PROJECT 3
+                     RESIDENT ASSISTANT
+                ================================== -->
 
                 <article class="project-card">
+
 
                     <div class="project-number">
                         PROJECT 03
                     </div>
 
+
                     <h3>
                         Resident Assistant
                     </h3>
+
 
                     <div class="project-subtitle">
                         Rutgers Office of Residence Life
                     </div>
 
+
+                    <!--
+                        RESIDENT ASSISTANT IMAGE
+
+                        Put the image in your images
+                        folder and name it:
+
+                        resident-assistant.jpg
+                    -->
+
+                    <img
+                        src="images/resident-assistant.jpg"
+                        alt="Resident Assistant community programming at Rutgers"
+                        class="project-image"
+                    >
+
+
                     <p>
-                        Help create an inclusive and engaging residential
-                        community through student support, programming,
-                        conflict resolution, and digital outreach.
+
+                        Help create a welcoming and engaging
+                        residential community through student
+                        support, programming, teamwork, and
+                        social media.
+
                     </p>
+
 
                     <ul class="project-highlights">
 
                         <li>
-                            Plan and facilitate community programs that
-                            encourage student connection and belonging.
+
+                            Plan and facilitate community
+                            programs and activities that
+                            encourage connection and belonging.
+
                         </li>
 
                         <li>
-                            Support residents, respond to concerns, and help
-                            mediate conflicts while maintaining a respectful
+
+                            Support residents, respond to
+                            concerns, and help mediate conflicts
+                            while maintaining a respectful
                             community.
+
                         </li>
 
                         <li>
-                            Collaborate with my team to create Instagram
-                            content, film videos, and promote upcoming
-                            community events.
+
+                            Work with my team to create
+                            Instagram content, film videos,
+                            and promote upcoming community
+                            events.
+
                         </li>
 
                     </ul>
 
+
                     <div class="tags">
-                        <span class="tag">Leadership</span>
-                        <span class="tag">Event Planning</span>
-                        <span class="tag">Social Media</span>
-                        <span class="tag">Communication</span>
+
+                        <span class="tag">
+                            Leadership
+                        </span>
+
+                        <span class="tag">
+                            Event Planning
+                        </span>
+
+                        <span class="tag">
+                            Social Media
+                        </span>
+
+                        <span class="tag">
+                            Communication
+                        </span>
+
                     </div>
+
+
+                    <!--
+                        RESIDENT ASSISTANT LINK
+
+                        Replace YOUR_RA_LINK_HERE
+                        with your actual link.
+                    -->
+
+                    <a
+                        href="YOUR_RA_LINK_HERE"
+                        class="project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Experience
+                    </a>
+
 
                 </article>
 
@@ -640,13 +1161,16 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ========================================
          FOOTER
-    ========================== -->
+    ========================================= -->
 
     <footer>
 
-        <h3>Maya Ljapo</h3>
+        <h3>
+            Maya Ljapo
+        </h3>
 
         <p>
             Finance Student • Rutgers Business School
@@ -656,4 +1180,5 @@
 
 
 </body>
+
 </html>
